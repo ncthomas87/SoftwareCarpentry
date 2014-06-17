@@ -6,3 +6,8 @@ three.countries
 library('ggplots')
 library(reshape2)
 str(three.countries)
+
+my.plot <- ggplot(data=three.countries, aes(x=year, y=gdpPercap, color=country)) +
+  geom_point()
+
+summary(my.plot)
