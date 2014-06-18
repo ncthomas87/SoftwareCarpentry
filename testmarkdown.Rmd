@@ -1,0 +1,20 @@
+Three Country Comparison
+========================================================
+
+
+### Calculation for year vs GDP
+```{r}
+data=read.delim("gapminder.txt")
+three.countries <- subset(data, country == "Ireland" | country == "Sweden" | country == "Zambia")
+library(ggplot2)
+library(reshape2)
+my.q.plot <- qplot(data=three.countries, x=year, y=gdpPercap, color=country, facets=~country) +
+  stat_smooth(method="lm")
+```
+
+```{r fig.width=7, fig.height=6}
+plot(my.q.plot)
+```
+
+Sweeden and Ireland show gdp growth overtime while **Zambia** does not
+
