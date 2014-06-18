@@ -13,5 +13,6 @@ my.plot <- ggplot(data=three.countries, aes(x=year, y=gdpPercap, color=country))
 
 my.q.plot <- qplot(data=three.countries, x=year, y=gdpPercap, color=country, facets=~country) +
   stat_smooth(method="lm")
-
+hist <- ggplot(data, aes(x=lifeExp)) +
+  geom_histogram()
 summary(my.plot)
